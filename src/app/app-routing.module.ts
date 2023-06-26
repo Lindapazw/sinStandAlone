@@ -13,10 +13,6 @@ const routes: Routes = [
   {
     path: 'itr',
     loadChildren: () => import('./itr').then(m => m.ItrRoutingModule),
-  },
-  {
-    path: 'alone',
-    loadComponent: () => import('./alone/alone/alone.component').then(m => m.AloneComponent),
   }
 ];
 
