@@ -1,7 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+// Layout
+import { AsignadorComponent, CoachComponent, DepartamentoComponent, EntrevistadorComponent, InicioComponent, LayoutPageComponent, RecursoComponent, RrhhComponent } from '../pages';
 
-const routes: Routes = [];
+// localhost:4200/itr
+const routes: Routes = [
+  {
+    path: '',
+    component: LayoutPageComponent,
+    children: [
+      {path:'asignador', component: AsignadorComponent}, // asugnador
+      {path:'coach', component: CoachComponent}, // coach
+      {path:'departamento', component: DepartamentoComponent}, // departamento
+      {path:'entrevistador', component: EntrevistadorComponent}, // entrevistador
+      {path:'inicio', component: InicioComponent}, // inicio
+      {path:'recurso', component: RecursoComponent}, // recurso
+      {path:'rrhh', component: RrhhComponent}, // rrhh
+    ]
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
