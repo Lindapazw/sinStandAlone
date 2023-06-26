@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// rutas padres
+// localhost:4200/auth
+// localhost:4200/main
+
 const routes: Routes = [
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth/auth-routing.module').then(m => m.AuthRoutingModule),
+    loadChildren: () => import('./auth').then(m => m.AuthRoutingModule),
+  },
+  {
+    path: 'main',
+    loadChildren: () => import('./itr').then(m => m.ItrRoutingModule),
   }
 ];
 
