@@ -5,6 +5,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 
+
 @NgModule({
   declarations: [],
   imports: [
@@ -12,7 +13,9 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
     MatFormFieldModule,
     MatInputModule
-  ],
+
+
+  ],s
   exports: [
     FormsModule,
     MatFormFieldModule,
