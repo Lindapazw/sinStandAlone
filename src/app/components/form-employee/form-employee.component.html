@@ -1,0 +1,34 @@
+    <div class="container">
+        <div class="col">
+            <h1 style="text-align: center;">{{title}}</h1>
+          </div>
+          <br><br>
+          <form>
+            <div class="form-group">
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" name="name" class="form-control" required [(ngModel)]="employee.name">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Apellido:</label>
+              <input type="text" id="lastName" name="lastName" class="form-control" required [(ngModel)]="employee.lastName">
+            </div>
+            <div class="form-group">
+              <label for="role">Dni:</label>
+              <input type="text" id="dni" name="dni" class="form-control" required [(ngModel)]="employee.dni">
+            </div>
+            <div class="form-group">
+              <label for="salary">Objetivo a corto plazo:</label>
+              <input type="text" id="shortGoal" name="shortGoal" class="form-control" required [(ngModel)]="employee.shortGoal">
+            </div>
+            <div class="form-group">
+              <label for="salary">Objetivo a largo plazo:</label>
+              <input type="text" id="longGoal" name="longGoal" class="form-control" required [(ngModel)]="employee.longGoal">
+            </div>
+            <div class="form-group">
+                <label for="salary">Dni coach:</label>
+                <input type="text" id="dniCoach" name="dniCoach" class="form-control" required [(ngModel)]="coachDni">
+              </div>
+            <button type="submit" class="btn btn-primary" (click)="createEmployee()">Agregar</button>
+          </form>
+    </div>
+    
