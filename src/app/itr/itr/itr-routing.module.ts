@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // Layout
-import { AsignadorComponent, CoachComponent, DepartamentoComponent, EntrevistadorComponent, InicioComponent, LayoutPageComponent, RecursoComponent, RrhhComponent } from '../pages';
+import { AsignadorComponent, CoachComponent, DepartamentoComponent, EntrevistadorComponent, InicioComponent, LayoutPageComponent, OportunidadComponent, RecursoComponent} from '../pages';
 
 // localhost:4200/itr/asignador
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
       {path:'entrevistador', component: EntrevistadorComponent}, // entrevistador
       {path:'inicio', component: InicioComponent}, // inicio
       {path:'recurso', component: RecursoComponent}, // recurso
-      {path:'rrhh', component: RrhhComponent}, // rrhh
+      {path:'oportunidad', component: OportunidadComponent}, // rrhh
       {path:'**', redirectTo:'inicio'}, // inicio
     ]
   }

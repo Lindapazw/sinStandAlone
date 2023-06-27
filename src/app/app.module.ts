@@ -11,7 +11,6 @@ import { InicioComponent } from './itr/pages/inicio/inicio.component';
 import { EntrevistadorComponent } from './itr/pages/entrevistador/entrevistador.component';
 import { AsignadorComponent } from './itr/pages/asignador/asignador.component';
 import { CoachComponent } from './itr/pages/coach/coach.component';
-import { RrhhComponent } from './itr/pages/rrhh/rrhh.component';
 import { RecursoComponent } from './itr/pages/recurso/recurso.component';
 import { DepartamentoComponent } from './itr/pages/departamento/departamento.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +18,10 @@ import { MaterialModule } from './material/material/material.module';
 // components
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { OportunidadComponent } from './itr';
+import { SkillComponent } from './itr/pages/skill/skill.component';
+import { PerfilComponent } from './itr/pages/perfil/perfil.component';
+import { EmpleadoComponent } from './itr/pages/empleado/empleado.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +34,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     EntrevistadorComponent,
     AsignadorComponent,
     CoachComponent,
-    RrhhComponent,
     RecursoComponent,
     DepartamentoComponent,
+    OportunidadComponent,
+    SkillComponent,
+    PerfilComponent,
+    EmpleadoComponent
   ],
   imports: [
     BrowserModule,

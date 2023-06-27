@@ -7,4 +7,4 @@ export * from './pages/entrevistador/entrevistador.component';
 export * from './pages/inicio/inicio.component';
 export * from './pages/layout-page/layout-page.component';
 export * from './pages/recurso/recurso.component';
-export * from './pages/rrhh/rrhh.component';
+export * from './pages/oportunidad/oportunidad.component';
