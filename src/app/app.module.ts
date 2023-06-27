@@ -22,6 +22,7 @@ import { OportunidadComponent } from './itr';
 import { SkillComponent } from './itr/pages/skill/skill.component';
 import { PerfilComponent } from './itr/pages/perfil/perfil.component';
 import { EmpleadoComponent } from './itr/pages/empleado/empleado.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { EmpleadoComponent } from './itr/pages/empleado/empleado.component';
     BrowserAnimationsModule,
     MaterialModule,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    TableComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
