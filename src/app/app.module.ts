@@ -16,6 +16,9 @@ import { RecursoComponent } from './itr/pages/recurso/recurso.component';
 import { DepartamentoComponent } from './itr/pages/departamento/departamento.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material/material.module';
+// components
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,15 @@ import { MaterialModule } from './material/material/material.module';
     CoachComponent,
     RrhhComponent,
     RecursoComponent,
-    DepartamentoComponent
+    DepartamentoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    NavbarComponent,
+    DashboardComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
