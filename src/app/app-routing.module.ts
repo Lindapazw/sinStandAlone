@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 // rutas padres
 // localhost:4200/auth
-// localhost:4200/main
+// localhost:4200/itr
+// localhost:4200
 
 const routes: Routes = [
   {
@@ -13,6 +14,11 @@ const routes: Routes = [
   {
     path: 'itr',
     loadChildren: () => import('./itr').then(m => m.ItrRoutingModule),
+  },
+  {
+    path: '',
+    redirectTo: 'auth',
+    pathMatch: 'full'
   }
 ];
 
