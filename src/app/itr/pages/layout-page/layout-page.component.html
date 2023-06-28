@@ -1,2 +1,73 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+
+<mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+
+        <mat-toolbar>Menu</mat-toolbar>
+
+        <mat-nav-list>
+
+            <a mat-list-item [routerLink]="['/itr/inicio']">Inicio</a>
+
+            <hr>
+
+            <a mat-list-item [routerLink]="['/itr/asignador']" routerLinkActive="router-link-active">Asignador</a>
+
+            <a mat-list-item [routerLink]="['/itr/coach']">Coach</a>
+
+            <a mat-list-item [routerLink]="['/itr/departamento']">Departamento</a>
+
+            <a mat-list-item [routerLink]="['/itr/entrevistador']">Entrevistador</a>
+
+            <a mat-list-item [routerLink]="['/itr/recurso']">Recurso</a>
+
+            <a mat-list-item [routerLink]="['/itr/oportunidad']">Oportunidades</a>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <mat-toolbar color="primary">
+
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+                *ngIf="isHandset$ | async">
+
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+
+            </button>
+
+            <span>itr</span>
+
+        </mat-toolbar>
+
+
+
+        <!-- Add Content Here -->
+
+        <div class="grid-container">
+
+            <h1 class="mat-h1">Dashboard</h1>
+
+
+
+            <div style="display: flex; flex-direction: column; ">
+
+                <router-outlet></router-outlet>
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+

@@ -1,3 +1,6 @@
+<button (click)="openNew()" mat-button class="pointer" >
+  <mat-icon>add</mat-icon>Nuevo
+</button>
 <mat-form-field>
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
@@ -41,7 +44,7 @@
         <a href="#" class="pointer" style="color: #1878b0" matTooltip="Ver usuario">
           <mat-icon>search</mat-icon>
         </a>
-        <a href="#" class="pointer" style="color: #1f516f" matTooltip="Editar usuario">
+        <a (click)="openDialog(row)" class="pointer" style="color: #1f516f" matTooltip="Editar usuario">
           <mat-icon>edit</mat-icon>
         </a>
 

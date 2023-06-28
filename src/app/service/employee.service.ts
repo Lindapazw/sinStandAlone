@@ -1,6 +1,7 @@
+import { EmployeeDTO } from 'src/app/model/EmployeeDTO';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
-import { EmployeeDTO } from '../model/EmployeeDTO';
+
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,16 @@ export class EmployeeService {
     ).catch(
       error => { console.error(error);}
     )
+  }
+
+  public updateEmployee(employee:EmployeeDTO){
+      return axios
+        .put(this.url + '/edit', employee)
+        .then((response) => {
+          return response.data;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
   }
 }

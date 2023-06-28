@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // table
 import {AfterViewInit, ViewChild} from '@angular/core';
@@ -11,6 +11,10 @@ import { EmployeeDTO } from 'src/app/model/EmployeeDTO';
 import { EmployeeService } from 'src/app/service/employee.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
+import { MatButtonModule } from '@angular/material/button';
+import { SharedService } from 'src/app/service/shared.service';
 
 
 /**
@@ -20,14 +24,40 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [CommonModule,MatFormFieldModule, MatInputModule, MatTableModule, 
-    MatSortModule, MatPaginatorModule, FormsModule, ReactiveFormsModule, MatIconModule],
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatButtonModule,
+  ],
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
-
 })
-export class TableComponent implements AfterViewInit, OnInit, OnChanges{
-  displayedColumns: string[] = ['name', 'lastName', 'dni', 'longGoal','shortGoal','acciones'];
+export class TableComponent implements AfterViewInit, OnInit, OnChanges, DoCheck {
+
+  private estado;
+
+  empleadoVacio: EmployeeDTO = {
+    name: '',
+    lastName: '',
+    dni: '',
+    shortGoal: '',
+    longGoal: '',
+  };
+  displayedColumns: string[] = [
+    'name',
+    'lastName',
+    'dni',
+    'longGoal',
+    'shortGoal',
+    'acciones',
+  ];
   dataSource: MatTableDataSource<EmployeeDTO>;
 
   anterior = false;
@@ -39,20 +69,33 @@ export class TableComponent implements AfterViewInit, OnInit, OnChanges{
   sort!: MatSort;
   formBuilder: any;
 
-  constructor(private employeeService: EmployeeService) {}
-  
-  ngOnChanges(changes: SimpleChanges): void {
-    if(this.refrescar != this.anterior)
-      this.ngOnInit();
+  constructor(
+    private employeeService: EmployeeService,
+    public dialog: MatDialog,
+    private shared: SharedService
+  ) {
+    this.shared.popupOutput$.subscribe( data => this.estado = data)
+  }
+  ngDoCheck(): void {
+    if(this.estado){
+      this.employeeService.listarEmployees().then(
+        response => {    
+          this.dataSource = new MatTableDataSource(response);}
+      )
+      this.estado = false;
+      console.log("ngDoCheck");
+    }
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.refrescar != this.anterior) this.ngOnInit();
+  }
 
   ngOnInit(): void {
     this.anterior = this.refrescar;
-    this.employeeService.listarEmployees().then(
-      response => {    
-        this.dataSource = new MatTableDataSource(response);}
-    )
+    this.employeeService.listarEmployees().then((response) => {
+      this.dataSource = new MatTableDataSource(response);
+    });
   }
 
   ngAfterViewInit() {
@@ -69,10 +112,19 @@ export class TableComponent implements AfterViewInit, OnInit, OnChanges{
     }
   }
 
-  deleteEmpoyee(dni: string){
-      this.employeeService.deleteEmployee(dni)
-      .then(res => this.ngOnInit())
-      .catch( err => console.log(err))
+  deleteEmpoyee(dni: string) {
+    this.employeeService
+      .deleteEmployee(dni)
+      .then((res) => this.ngOnInit())
+      .catch((err) => console.log(err));
+  }
+
+  public openDialog(employee: EmployeeDTO) {
+    this.dialog.open(PopupComponent, { data: employee });
+  }
+
+  openNew() {
+    this.dialog.open(PopupComponent, { data: this.empleadoVacio });
   }
 }
 

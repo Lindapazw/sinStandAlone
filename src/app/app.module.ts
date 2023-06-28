@@ -24,6 +24,15 @@ import { PerfilComponent } from './itr/pages/perfil/perfil.component';
 import { EmpleadoComponent } from './itr/pages/empleado/empleado.component';
 import { TableComponent } from './components/table/table.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PopupComponent } from './components/popup/popup.component';
+import { MatDialog } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -41,7 +50,7 @@ import { FooterComponent } from './components/footer/footer.component';
     OportunidadComponent,
     SkillComponent,
     PerfilComponent,
-    EmpleadoComponent
+    EmpleadoComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,9 +60,18 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     DashboardComponent,
     TableComponent,
-    FooterComponent
+    FooterComponent,
+    PopupComponent,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    CommonModule,
+    DashboardComponent,
+    RouterLink,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [MatDialog],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
