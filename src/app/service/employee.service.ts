@@ -26,4 +26,12 @@ export class EmployeeService {
       error => { console.error(error);}
     )
   }
+
+  public deleteEmployee(dni:string){
+    return axios.delete(this.url +"/delete/"+dni)
+    .then(response =>{ return response.data }
+    ).catch(
+      error => { console.error(error);}
+    )
+  }
 }

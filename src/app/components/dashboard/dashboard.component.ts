@@ -33,6 +33,7 @@ import { FormEmployeeComponent } from "../form-employee/form-employee.component"
 })
 export class DashboardComponent {
   private breakpointObserver = inject(BreakpointObserver);
+  public refreshTable = false;
 
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
@@ -54,4 +55,8 @@ export class DashboardComponent {
       ];
     })
   );
+
+  addItem(estado: boolean){
+    this.refreshTable = !this.refreshTable;
+  }
 }
