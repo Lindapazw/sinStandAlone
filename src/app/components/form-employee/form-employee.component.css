@@ -60,7 +60,7 @@
   button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #812960;
+    background-color: rgb(12, 12, 158);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -68,5 +68,6 @@
   }
   
   button:hover {
-    background-color: #9468e6;
+    background-color: rgb(52, 52, 188);
+    color: white;
   }
