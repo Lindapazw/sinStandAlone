@@ -16,8 +16,7 @@ import { DepartamentoComponent } from './itr/pages/departamento/departamento.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material/material.module';
 // components
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 import { OportunidadComponent } from './itr';
 import { SkillComponent } from './itr/pages/skill/skill.component';
 import { PerfilComponent } from './itr/pages/perfil/perfil.component';
@@ -57,8 +56,6 @@ import { RouterLink } from '@angular/router';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NavbarComponent,
-    DashboardComponent,
     TableComponent,
     FooterComponent,
     PopupComponent,
@@ -68,7 +65,6 @@ import { RouterLink } from '@angular/router';
     MatListModule,
     MatIconModule,
     CommonModule,
-    DashboardComponent,
     RouterLink,
   ],
   providers: [MatDialog],
