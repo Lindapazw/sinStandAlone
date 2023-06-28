@@ -23,6 +23,7 @@ import { SkillComponent } from './itr/pages/skill/skill.component';
 import { PerfilComponent } from './itr/pages/perfil/perfil.component';
 import { EmpleadoComponent } from './itr/pages/empleado/empleado.component';
 import { TableComponent } from './components/table/table.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -40,18 +41,19 @@ import { TableComponent } from './components/table/table.component';
     OportunidadComponent,
     SkillComponent,
     PerfilComponent,
-    EmpleadoComponent
+    EmpleadoComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     NavbarComponent,
     DashboardComponent,
-    TableComponent
+    TableComponent,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -8,24 +8,26 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 // common module
 import { CommonModule } from '@angular/common';
-import { TableComponent } from "../table/table.component";
-import { FormEmployeeComponent } from "../form-employee/form-employee.component";
+import { TableComponent } from '../table/table.component';
+import { FormEmployeeComponent } from '../form-employee/form-employee.component';
+import { CarrouselComponent } from '../carrousel';
 
 @Component({
-    selector: 'app-dashboard',
-    templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.css'],
-    standalone: true,
-    imports: [
-        MatGridListModule,
-        MatMenuModule,
-        MatIconModule,
-        MatButtonModule,
-        MatCardModule,
-        CommonModule,
-        TableComponent,
-        FormEmployeeComponent
-    ]
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
+  standalone: true,
+  imports: [
+    MatGridListModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    CommonModule,
+    TableComponent,
+    FormEmployeeComponent,
+    CarrouselComponent,
+  ],
 })
 export class DashboardComponent {
   private breakpointObserver = inject(BreakpointObserver);
@@ -38,7 +40,7 @@ export class DashboardComponent {
           { title: 'Card 1', cols: 1, rows: 1 },
           { title: 'Card 2', cols: 1, rows: 1 },
           { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
+          { title: 'Card 4', cols: 1, rows: 1 },
         ];
       }
 
@@ -46,7 +48,7 @@ export class DashboardComponent {
         { title: 'Card 1', cols: 2, rows: 1 },
         { title: 'Card 2', cols: 1, rows: 1 },
         { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
+        { title: 'Card 4', cols: 1, rows: 1 },
       ];
     })
   );
