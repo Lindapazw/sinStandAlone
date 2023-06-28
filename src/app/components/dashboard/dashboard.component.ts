@@ -10,6 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from "../table/table.component";
 import { FooterComponent } from '../footer/footer.component';
+import { FormEmployeeComponent } from "../form-employee/form-employee.component";
+
 
 @Component({
     selector: 'app-dashboard',
@@ -24,7 +26,9 @@ import { FooterComponent } from '../footer/footer.component';
         MatCardModule,
         CommonModule,
         TableComponent,
-        FooterComponent
+        FooterComponent,
+        FormEmployeeComponent
+
     ]
 })
 export class DashboardComponent {

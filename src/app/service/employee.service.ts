@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
+import { EmployeeDTO } from '../model/EmployeeDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -18,4 +19,11 @@ export class EmployeeService {
     )
   }
 
+  public createEmployee(employee: EmployeeDTO, coachDni: string ){
+    return axios.post('http://localhost:8080/api/employee/' + coachDni , employee).then(
+      response =>{ return response.data }
+    ).catch(
+      error => { console.error(error);}
+    )
+  }
 }
