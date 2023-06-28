@@ -8,9 +8,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 // common module
 import { CommonModule } from '@angular/common';
-import { TableComponent } from '../table/table.component';
-import { FormEmployeeComponent } from '../form-employee/form-employee.component';
 import { CarrouselComponent } from '../carrousel';
+import { TableComponent } from '../table/table.component';
+import { FooterComponent } from '../footer/footer.component';
+import { FormEmployeeComponent } from '../form-employee/form-employee.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,10 +28,13 @@ import { CarrouselComponent } from '../carrousel';
     TableComponent,
     FormEmployeeComponent,
     CarrouselComponent,
+    FooterComponent,
+    FormEmployeeComponent,
   ],
 })
 export class DashboardComponent {
   private breakpointObserver = inject(BreakpointObserver);
+  public refreshTable = false;
 
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
@@ -52,4 +56,8 @@ export class DashboardComponent {
       ];
     })
   );
+
+  addItem(estado: boolean) {
+    this.refreshTable = !this.refreshTable;
+  }
 }

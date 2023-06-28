@@ -24,6 +24,7 @@ import { PerfilComponent } from './itr/pages/perfil/perfil.component';
 import { EmpleadoComponent } from './itr/pages/empleado/empleado.component';
 import { TableComponent } from './components/table/table.component';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { CommonModule } from '@angular/common';
     NavbarComponent,
     DashboardComponent,
     TableComponent,
+    FooterComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -3,15 +3,29 @@
 }
 
 .sidenav {
+  color: white;
   width: 200px;
+  background: rgb(12, 12, 158);
 }
 
 .sidenav .mat-toolbar {
-  background: inherit;
+  color: white;
+  background: rgb(12, 12, 158);
 }
 
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   z-index: 1;
+  background: rgb(12, 12, 158);
+}
+::ng-deep .menu-item .mdc-list-item__primary-text{
+  color: white;
+}
+::ng-deep .menu-item:hover .mdc-list-item__primary-text:hover {
+ color: blue;
+
+}
+::ng-deep .menu-item:hover{
+  background-color: white;
 }
