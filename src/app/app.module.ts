@@ -16,15 +16,22 @@ import { DepartamentoComponent } from './itr/pages/departamento/departamento.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material/material.module';
 // components
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 import { OportunidadComponent } from './itr';
 import { SkillComponent } from './itr/pages/skill/skill.component';
 import { PerfilComponent } from './itr/pages/perfil/perfil.component';
 import { EmpleadoComponent } from './itr/pages/empleado/empleado.component';
 import { TableComponent } from './components/table/table.component';
-import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
+import { PopupComponent } from './components/popup/popup.component';
+import { MatDialog } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -50,12 +57,17 @@ import { FooterComponent } from './components/footer/footer.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NavbarComponent,
-    DashboardComponent,
     TableComponent,
     FooterComponent,
+    PopupComponent,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    RouterLink,
   ],
-  providers: [],
+  providers: [MatDialog],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
