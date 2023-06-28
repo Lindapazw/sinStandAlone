@@ -23,6 +23,7 @@ import { SkillComponent } from './itr/pages/skill/skill.component';
 import { PerfilComponent } from './itr/pages/perfil/perfil.component';
 import { EmpleadoComponent } from './itr/pages/empleado/empleado.component';
 import { TableComponent } from './components/table/table.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TableComponent } from './components/table/table.component';
     MaterialModule,
     NavbarComponent,
     DashboardComponent,
-    TableComponent
+    TableComponent,
+    FooterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

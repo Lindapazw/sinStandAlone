@@ -1,0 +1,10 @@
+/* propias */
+
+.bg {
+  background: rgb(80,133,208);
+  background: linear-gradient(166deg, rgba(80,133,208,1) 0%, rgb(40, 185, 207) 0%, rgba(112,60,212,1) 61%);
+}
+
+.icon {
+  color: #fff;
+}
