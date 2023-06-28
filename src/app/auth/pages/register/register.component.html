@@ -1,19 +1,34 @@
 <div class="flex flex-column">
-  <h2 class="text-start">Registrate:</h2>
+  <div class="text-center">
+    <img src="../../../../assets/logoITR.png" alt="Logo ITR" width="250">
+  </div>
 
+  <form>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Usuario/DNI">
+      <label for="floatingInput">Nombre/DNI</label>
+    </div>
 
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi">
-    </mat-form-field>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Contraseña</label>
+    </div>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Leave a comment</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
+    <div class="form-check mt-4 mb-5 d-flex justify-content-between">
+      <div>
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Terminos y condiciones
+        </label>
+      </div>
+      <div>
+        <a class="link-offset-1" [routerLink]="['/auth/login']">Ya tengo una cuenta</a>
+      </div>
+    </div>
+
+    <div>
+      <a class="btn btn-primary btn-lg w-100" href="#" role="button">Registrarme</a>
+    </div>
   </form>
-
-
 </div>
 
