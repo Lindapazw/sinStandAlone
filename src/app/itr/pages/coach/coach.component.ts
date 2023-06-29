@@ -1,7 +1,7 @@
 import { Component, NgIterable, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { CoachDTO } from 'src/app/model/CoachDTO';
 import { CoachService } from 'src/app/service/coach.service';
+
 
 @Component({
   selector: 'app-coach',
@@ -9,16 +9,28 @@ import { CoachService } from 'src/app/service/coach.service';
   styleUrls: ['./coach.component.css'],
 })
 export class CoachComponent implements OnInit {
-  constructor(private coachService: CoachService) {}
- 
+  constructor(private coachService: CoachService) {} 
+
+  //Coach-card
   dataSource: CoachDTO[] = [];
   filterCoach: CoachDTO[] = [];
 
+  //Employee-table
+
+
+
+
   ngOnInit(): void {
+    //Coach-card
     this.coachService.listCoaches().then((response) => {
       this.dataSource = response;
       this.filterCoach = response;
     });
+
+    //Employee-table
+
+
+
   }
 
   // Filtro para coach-card
@@ -30,4 +42,9 @@ export class CoachComponent implements OnInit {
       return fullName.includes(filterValue);
     });
   }
+
+  // Tabla de empleados
+
+
+
 }

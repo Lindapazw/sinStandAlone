@@ -33,49 +33,49 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
 import { CardsComponent } from "./components/cards/cards.component";
+import { CoachTableComponent } from "./components/coach-table/coach-table.component";
 
 
 
 @NgModule({
-
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    LayoutComponent,
-    LayoutPageComponent,    
-    EntrevistadorComponent,
-    AsignadorComponent,
-    CoachComponent,
-    RecursoComponent,
-    DepartamentoComponent,
-    OportunidadComponent,
-    SkillComponent,
-    PerfilComponent,
-    EmpleadoComponent,
-    InicioComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    TableComponent,
-    FooterComponent,
-    PopupComponent,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    CommonModule,
-    RouterLink,
-    TableComponent,
-    FooterComponent,
-    CardsComponent
-
-  ],
-  providers: [MatDialog],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        RegisterComponent,
+        LayoutComponent,
+        LayoutPageComponent,
+        EntrevistadorComponent,
+        AsignadorComponent,
+        CoachComponent,
+        RecursoComponent,
+        DepartamentoComponent,
+        OportunidadComponent,
+        SkillComponent,
+        PerfilComponent,
+        EmpleadoComponent,
+        InicioComponent
+    ],
+    providers: [MatDialog],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        TableComponent,
+        FooterComponent,
+        PopupComponent,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatListModule,
+        MatIconModule,
+        CommonModule,
+        RouterLink,
+        TableComponent,
+        FooterComponent,
+        CardsComponent,
+        CoachTableComponent
+    ]
 })
 export class AppModule {}
