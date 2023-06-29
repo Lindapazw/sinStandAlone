@@ -1,14 +1,16 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>{{resource.name}}</mat-card-title>
+<mat-card class="card">
+  <div class="card__img-cantainer">
+    <img class="card__image" mat-card-image src="https://www.welivesecurity.com/wp-content/uploads/2018/04/cursos-online-gratuitos-seguridad-inform%C3%A1tica.jpg" alt="Photo of a Shiba Inu">
+  </div>
+  <mat-card-header class="card__title">
+    <mat-card-title >{{resource.name}}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image src="https://unipython.com/wp-content/uploads/2019/09/unipython-curso-programacion-983x777.jpg" alt="Photo of a Shiba Inu">    
-  <mat-card-content>
+  <mat-card-content class="card__description">
     <p>
       {{resource.description}}
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button><a href="{{resource.url}}" target="_blank">Ir al curso</a></button>
+    <button mat-raised-button color="primary" class="card__button"><a href="{{resource.url}}" target="_blank">Ir al curso</a></button>
   </mat-card-actions>
 </mat-card>
