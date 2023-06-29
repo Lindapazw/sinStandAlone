@@ -1,10 +1,12 @@
-<button (click)="openNew()" mat-button class="pointer" >
-  <mat-icon>add</mat-icon>Nuevo
-</button>
+
 <mat-form-field>
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
 </mat-form-field>
+
+<button (click)="openNew()" mat-button class="pointer p-4 btn btn-primary" >
+  <mat-icon>add</mat-icon>Nuevo
+</button>
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort class="custom-table">
