@@ -3,7 +3,7 @@
 <div class="container-cards">
     <ul class="cards">
         <li *ngFor="let resource of resources">
-        <app-cards [resource]="resource"></app-cards>
+        <app-cards [resource]="resource" (deleteResource)="refrescarCards($event)"></app-cards>
         </li>
     </ul>
 </div>

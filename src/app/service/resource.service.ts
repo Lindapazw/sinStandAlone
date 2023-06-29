@@ -20,7 +20,7 @@ export class ResourceService {
     );
   }
 
-  public deleteResourceBusiness(name:string){
+  public deleteResourceBusiness(name: String){
     return axios.delete(this.url +"/delete/"+name)
     .then(response =>{ return response.data }
     ).catch(
@@ -28,7 +28,7 @@ export class ResourceService {
     )
   }
 
-  editResourceBusiness(name: string): Promise<ResourceDTO[]> {
+  editResourceBusiness(name: String): Promise<ResourceDTO[]> {
     return axios.put(this.url+ "/update/" + name).then(
       response => response.data
     ).catch(

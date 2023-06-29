@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { ResourceDTO } from 'src/app/model/ResourceDTO';
 import { ResourceService } from 'src/app/service/resource.service';
 
@@ -10,11 +10,12 @@ import { ResourceService } from 'src/app/service/resource.service';
 export class RecursoComponent implements OnInit  {
   resources: ResourceDTO[] = [];
 
-  constructor(private resourceService: ResourceService){}
+  constructor(private resourceService: ResourceService){}  
 
   ngOnInit(): void {
     this.loadResources();
   }
+
 
   async loadResources(): Promise<void> {
     try {
@@ -23,4 +24,10 @@ export class RecursoComponent implements OnInit  {
       console.error(error);
     }
   } 
+
+  refrescarCards(estado: Boolean){
+    if(estado){
+      this.ngOnInit();
+    }
+  }
 }

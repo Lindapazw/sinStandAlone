@@ -9,7 +9,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [],
@@ -22,7 +22,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatSortModule,
     MatTableModule,
     MatIconModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatButtonModule
   ],
   exports: [
     FormsModule,
@@ -32,7 +33,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatSortModule,
     MatTableModule,
     MatIconModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatButtonModule
   ],
 })
 
