@@ -32,6 +32,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
+import { CarrouselComponent } from './components';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { RouterLink } from '@angular/router';
     MatListModule,
     MatIconModule,
     RouterLink,
+    CarrouselComponent,
   ],
   providers: [MatDialog],
   bootstrap: [AppComponent],
