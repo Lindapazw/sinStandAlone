@@ -121,10 +121,12 @@ export class TableComponent implements AfterViewInit, OnInit, OnChanges, DoCheck
 
   public openDialog(employee: EmployeeDTO) {
     this.dialog.open(PopupComponent, { data: employee });
+    this.shared.editarExistente(true);
   }
 
   openNew() {
     this.dialog.open(PopupComponent, { data: this.empleadoVacio });
+    this.shared.agregarNuevo(true);
   }
 }
 
