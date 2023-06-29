@@ -1,0 +1,6 @@
+section {
+  /* background: rgb(113,44,248);
+  background: linear-gradient(98deg, rgba(113,44,248,1) 35%, rgba(92,225,230,1) 80%); */
+  background-image: url(../../../../assets/fondoITR.jpg);
+  background-size: cover;
+}

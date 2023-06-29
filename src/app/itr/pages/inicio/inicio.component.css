@@ -1,0 +1,22 @@
+.titulo{
+  color: #0d6efd;
+  font-weight: 500;
+}
+
+.btn-itr{
+  background: rgb(80,133,208);
+  background: linear-gradient(166deg, rgba(80,133,208,1) 0%, rgb(40, 185, 207) 0%, rgba(112,60,212,1) 61%);
+}
+
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 1.4em; /* Ajusta el valor según tus preferencias */
+  max-height: 7em; /* Ajusta el valor según la cantidad de texto que deseas mostrar */
+}
+
+.idea {
+  top: -18px;
+  right: 10px;
+}

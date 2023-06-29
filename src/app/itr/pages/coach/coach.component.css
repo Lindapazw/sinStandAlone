@@ -1,0 +1,58 @@
+.container {
+    min-height: 100vh;
+}
+
+.title-buscador {
+    display: flex;
+    justify-content: space-between;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+.buscador input{
+    max-height: 2.1rem;
+    padding: .5rem 1rem;
+    border: none;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+}
+
+.list-coaches {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.05), 0 6px 6px rgba(0,0,0,0.15);
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+}
+
+.coach-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+}
+
+span {
+    text-align: center;
+    line-height: .4;
+}
+
+.coach-card p {
+    font-size: .75rem;
+}

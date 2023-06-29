@@ -10,3 +10,16 @@ table {
 td, th {
   width: 25%;
 }
+
+/* estilos de la tabla */
+
+.custom-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.custom-table th,
+.custom-table td {
+  width: 25%; /* Ajusta este valor según la cantidad de columnas que tengas */
+  padding: 8px;
+}
