@@ -1,3 +1,6 @@
+.h-spinner{
+    height: 55vh;
+}
 nav {
     width: 100%;
     display: flex;

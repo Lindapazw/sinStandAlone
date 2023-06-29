@@ -34,6 +34,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
 import { CardsComponent } from "./components/cards/cards.component";
 import { CoachTableComponent } from "./components/coach-table/coach-table.component";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 
 
@@ -75,7 +77,8 @@ import { CoachTableComponent } from "./components/coach-table/coach-table.compon
         TableComponent,
         FooterComponent,
         CardsComponent,
-        CoachTableComponent
+        CoachTableComponent,
+        MatProgressSpinnerModule,
     ]
 })
 export class AppModule {}

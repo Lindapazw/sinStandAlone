@@ -8,6 +8,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatButtonModule} from '@angular/material/button';
 
@@ -22,8 +23,10 @@ import {MatButtonModule} from '@angular/material/button';
     MatSortModule,
     MatTableModule,
     MatIconModule,
+    MatProgressSpinnerModule,
     MatProgressBarModule,
     MatButtonModule
+
   ],
   exports: [
     FormsModule,
@@ -34,7 +37,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatTableModule,
     MatIconModule,
     MatProgressBarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule,
   ],
 })
 

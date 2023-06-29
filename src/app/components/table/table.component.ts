@@ -15,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedService } from 'src/app/service/shared.service';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 /**
  * @title Data table with sorting, pagination, and filtering.
@@ -35,6 +35,7 @@ import { SharedService } from 'src/app/service/shared.service';
     ReactiveFormsModule,
     MatIconModule,
     MatButtonModule,
+    MatProgressSpinnerModule
   ],
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
@@ -42,6 +43,7 @@ import { SharedService } from 'src/app/service/shared.service';
 export class TableComponent implements OnInit, OnChanges, DoCheck {
 
   private estado;
+  isLoading: boolean = true;
 
   empleadoVacio: EmployeeDTO = {
     name: '',
@@ -83,7 +85,6 @@ export class TableComponent implements OnInit, OnChanges, DoCheck {
           this.dataSource = new MatTableDataSource(response);}
       )
       this.estado = false;
-      console.log("ngDoCheck");
     }
   }
 
@@ -92,9 +93,11 @@ export class TableComponent implements OnInit, OnChanges, DoCheck {
   }
 
   ngOnInit(): void {
-    this.anterior = this.refrescar;
+    this.isLoading = true;
+
     this.employeeService.listarEmployees().then((response) => {
       this.dataSource = new MatTableDataSource(response);
+      this.isLoading = false;
       this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     });
