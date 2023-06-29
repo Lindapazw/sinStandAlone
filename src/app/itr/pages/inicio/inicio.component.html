@@ -1,3 +1,97 @@
+<h2 class="titulo m-3 fs-4">Bienvenido de nuevo</h2>
+
+<div class="row mx-3"> <!-- tips -->
+
+  <div class="col-md-3">
+    <div class="card position-relative">
+      <img loading="lazy" class="idea position-absolute" src="../../../../assets/bombilla (3).png" alt="idea">
+      <div class="card-body">
+        <h5 class="card-title">ITR tips <span class="text-body-secondary">- Angular </span></h5>
+        <p class="card-text">Verifica que los archivos CSS de Bootstrap estén vinculados correctamente en tu página HTML. Asegúrate de que la ruta del archivo CSS sea correcta y que no haya errores de carga. Aplica técnicas de almacenamiento en caché en tu back-end para mejorar el rendimiento de la aplicación, minimizando las consultas a la base de datos y reduciendo la carga del servidor.</p>
+        <!-- boton -->
+        <button class="btn btn-primary w-100 btn-itr" (click)="openModal(myModalContent)">Ver más</button>
+        <!-- modal -->
+        <ng-template #myModalContent>
+          <div class="modal-header">
+            <h5 class="modal-title"> Angular </h5>
+            <button type="button" class="close" aria-label="Close" (click)="modalService.dismissAll()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Tip: Utiliza el cambio de detección "OnPush" en tus componentes cuando sea posible. Esto ayuda a mejorar el rendimiento al reducir la frecuencia de las verificaciones de cambio en Angular.</p>
+            <p>Al establecer el cambio de detección en "OnPush" en un componente, Angular solo volverá a evaluar y actualizar el componente cuando se produzcan cambios en sus entradas (@Input) o cuando se dispare un evento dentro del componente. Esto evita que se realicen verificaciones innecesarias en cada ciclo de detección de cambios y mejora el rendimiento de la aplicación.</p>
+          </div>
+        </ng-template> <!-- fin de modal -->
+      </div>
+      <div class="card-footer text-body-secondary text-center">
+        2 days ago
+      </div>
+    </div>
+  </div> <!--fin de card -->
+
+  <div class="col-md-3">
+    <div class="card position-relative">
+      <img loading="lazy" class="idea position-absolute" src="../../../../assets/bombilla (3).png" alt="idea">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title">ITR tips<span class="text-body-secondary">- Bootstrap </span></h5>
+        </div>
+        <p class="card-text">Asegúrate de que estés utilizando la versión correcta de Bootstrap. Las clases y estilos pueden variar según la versión de Bootstrap que estés utilizando. Si estás siguiendo la documentación de una versión específica, verifica que coincida con la versión que estás utilizando.</p>
+        <!-- boton -->
+        <button class="btn btn-primary w-100 btn-itr" (click)="openModal(myModalContent)">Ver más</button>
+        <!-- modal -->
+        <ng-template #myModalContent>
+          <div class="modal-header">
+            <h5 class="modal-title"> bootstrap </h5>
+            <button type="button" class="close" aria-label="Close" (click)="modalService.dismissAll()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Utiliza el sistema de rejilla (Grid System) de Bootstrap para crear diseños responsivos. El sistema de rejilla de Bootstrap está basado en una estructura de columnas y filas, lo que te permite dividir tu contenido en diferentes columnas que se adaptan automáticamente a diferentes tamaños de pantalla.</p>
+            <p>Aprovecha los componentes predefinidos de Bootstrap para agilizar el desarrollo. Bootstrap ofrece una amplia gama de componentes reutilizables, como botones, barras de navegación, tarjetas, formularios, entre otros. Utilizar estos componentes te ayudará a mantener un estilo coherente y ahorra tiempo de desarrollo.</p>
+          </div>
+        </ng-template>  <!-- fin de modal -->
+      </div>
+      <div class="card-footer text-body-secondary text-center">
+        2 days ago
+      </div>
+    </div>
+  </div> <!--fin de card -->
+
+  <div class="col-md-3">
+    <div class="card position-relative">
+      <img loading="lazy" class="idea position-absolute" src="../../../../assets/bombilla (3).png" alt="idea">
+      <div class="card-body">
+        <h5 class="card-title">ITR tips <span class="text-body-secondary">- Java </span></h5>
+        <p class="card-text">Si estás usando una versión personalizada de Bootstrap o has modificado los estilos, verifica si hay reglas CSS que puedan estar anulando el color de fondo que estás tratando de aplicar. Utiliza las herramientas de desarrollo del navegador para inspeccionar los estilos aplicados al botón y verifica si hay reglas CSS que estén afectando al color de fondo.</p>
+        <a href="#" class="btn btn-primary w-100 btn-itr">Ver más</a>
+      </div>
+      <div class="card-footer text-body-secondary text-center">
+        2 days ago
+      </div>
+    </div>
+  </div> <!--fin de card -->
+
+  <div class="col-md-3">
+    <div class="card position-relative">
+      <img loading="lazy" class="idea position-absolute" src="../../../../assets/bombilla (3).png" alt="idea">
+      <div class="card-body">
+        <h5 class="card-title">ITR tips <span class="text-body-secondary">- JavaScript </span></h5>
+        <p class="card-text">Asegúrate de que la clase de color que estás utilizando sea compatible con la versión de Bootstrap que estás utilizando. Algunas clases de color pueden variar entre versiones, por lo que es importante asegurarse de que estés utilizando la clase correcta para la versión de Bootstrap que tienes.</p>
+        <a href="#" class="btn btn-primary w-100 btn-itr">Ver más</a>
+      </div>
+      <div class="card-footer text-body-secondary text-center">
+        2 days ago
+      </div>
+    </div>
+  </div> <!--fin de card -->
+
+</div> <!--fin de tips-->
+
+
+
 <!--noticias -->
 <h2 class="titulo m-3 fs-4">Últimas noticias de ITR</h2>
 
