@@ -1,0 +1,24 @@
+
+ul, li {
+  list-style: none;
+  text-decoration: none;
+}
+
+.container-cards {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.cards li {
+  width: 30%;
+  min-width: 300px;
+}

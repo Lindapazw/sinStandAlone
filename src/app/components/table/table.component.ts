@@ -40,7 +40,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
 })
-export class TableComponent implements AfterViewInit, OnInit, OnChanges, DoCheck {
+export class TableComponent implements OnInit, OnChanges, DoCheck {
 
   private estado;
   isLoading: boolean = true;
@@ -98,12 +98,9 @@ export class TableComponent implements AfterViewInit, OnInit, OnChanges, DoCheck
     this.employeeService.listarEmployees().then((response) => {
       this.dataSource = new MatTableDataSource(response);
       this.isLoading = false;
-    });
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+      this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    });
   }
 
   applyFilter(event: Event) {
