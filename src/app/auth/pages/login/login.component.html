@@ -1,18 +1,33 @@
 <div class="flex flex-column">
-  <h2 class="text-start">Completar campos:</h2>
+  <div class="text-center">
+    <img src="../../../../assets/logoITR.png" alt="Logo ITR" width="250">
+  </div>
 
+  <form>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingInput" placeholder="Usuario/DNI">
+      <label for="floatingInput">Usuario/DNI</label>
+    </div>
 
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi">
-    </mat-form-field>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Contraseña</label>
+    </div>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Leave a comment</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
+    <div class="form-check mt-4 mb-5 d-flex justify-content-between">
+      <div>
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Recordarme
+        </label>
+      </div>
+      <div>
+        <a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" [routerLink]="['/auth/register']">Quiero registrarme</a>
+      </div>
+    </div>
+
+    <div>
+      <a class="btn btn-violet btn-lg w-100" [routerLink]="['/itr/asignador']" role="button">Iniciar</a>
+    </div>
   </form>
-
-
 </div>

@@ -33,6 +33,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,9 @@ import { RouterLink } from '@angular/router';
     MatIconModule,
     CommonModule,
     RouterLink,
+    TableComponent,
+    FooterComponent
+
   ],
   providers: [MatDialog],
   bootstrap: [AppComponent],
