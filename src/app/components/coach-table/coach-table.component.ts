@@ -29,7 +29,7 @@ export class CoachTableComponent implements OnInit {
   ngOnInit(): void {
     this.coachService.listEmployeeCoach(this.dniCoach)
     .then((response) => {
-      this.dataSource = response;
+      this.dataSource = new MatTableDataSource(response);
     });
   }
 
