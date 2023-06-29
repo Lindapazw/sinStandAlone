@@ -19,4 +19,24 @@ export class ResourceService {
       }
     );
   }
+
+  public deleteResourceBusiness(name:string){
+    return axios.delete(this.url +"/delete/"+name)
+    .then(response =>{ return response.data }
+    ).catch(
+      error => { console.error(error);}
+    )
+  }
+
+  editResourceBusiness(name: string): Promise<ResourceDTO[]> {
+    return axios.put(this.url+ "/update/" + name).then(
+      response => response.data
+    ).catch(
+      error => {
+        console.error(error);
+        return [];
+      }
+    );
+  }
+
 }
