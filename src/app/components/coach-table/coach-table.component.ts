@@ -1,11 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from 'src/app/material/material/material.module';
 import { EmployeeDTO } from 'src/app/model/EmployeeDTO';
 import { MatTableDataSource } from '@angular/material/table';
 import { CoachService } from 'src/app/service/coach.service';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatFormFieldControl } from '@angular/material/form-field';
 import { MatSort } from '@angular/material/sort';
 
 @Component({
@@ -30,13 +29,18 @@ export class CoachTableComponent implements OnInit {
     this.coachService.listEmployeeCoach(this.dniCoach)
     .then((response) => {
       this.dataSource = new MatTableDataSource(response);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     });
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
+  // ngAfterViewInit() {
+  //   if(this.paginator){
+  //     this.dataSource.paginator = this.paginator;
+  //   }
+    
+  //   this.dataSource.sort = this.sort;
+  // }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

@@ -39,7 +39,7 @@ import { SharedService } from 'src/app/service/shared.service';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
 })
-export class TableComponent implements AfterViewInit, OnInit, OnChanges, DoCheck {
+export class TableComponent implements OnInit, OnChanges, DoCheck {
 
   private estado;
 
@@ -95,12 +95,9 @@ export class TableComponent implements AfterViewInit, OnInit, OnChanges, DoCheck
     this.anterior = this.refrescar;
     this.employeeService.listarEmployees().then((response) => {
       this.dataSource = new MatTableDataSource(response);
-    });
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+      this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    });
   }
 
   applyFilter(event: Event) {
