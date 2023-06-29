@@ -1,1 +1,8 @@
-<p>recurso works!</p>
+<div class="container-cards">
+    <ul>
+        <li *ngFor="let resource of resources">
+        <app-cards [resource]="resource"></app-cards>
+        </li>
+    </ul>    
+</div>
+
