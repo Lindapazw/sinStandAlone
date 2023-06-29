@@ -1,7 +1,7 @@
 import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // table
-import {AfterViewInit, ViewChild} from '@angular/core';
+import { ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
@@ -16,6 +16,7 @@ import { PopupComponent } from '../popup/popup.component';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedService } from 'src/app/service/shared.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 /**
  * @title Data table with sorting, pagination, and filtering.
@@ -42,8 +43,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 })
 export class TableComponent implements OnInit, OnChanges, DoCheck {
 
-  private estado;
   isLoading: boolean = true;
+  private estado;
 
   empleadoVacio: EmployeeDTO = {
     name: '',
@@ -82,9 +83,11 @@ export class TableComponent implements OnInit, OnChanges, DoCheck {
     if(this.estado){
       this.employeeService.listarEmployees().then(
         response => {    
-          this.dataSource = new MatTableDataSource(response);}
+          this.dataSource = new MatTableDataSource(response);
+        }
       )
       this.estado = false;
+      console.log("ngDoCheck");
     }
   }
 
@@ -93,13 +96,14 @@ export class TableComponent implements OnInit, OnChanges, DoCheck {
   }
 
   ngOnInit(): void {
-    this.isLoading = true;
-
+    this.anterior = this.refrescar;
     this.employeeService.listarEmployees().then((response) => {
       this.dataSource = new MatTableDataSource(response);
       this.isLoading = false;
-      this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+      setTimeout(() => {
+        this.dataSource.paginator = this.paginator;
+      });
+      this.dataSource.sort = this.sort;
     });
   }
 
@@ -130,4 +134,3 @@ export class TableComponent implements OnInit, OnChanges, DoCheck {
     this.shared.agregarNuevo(true);
   }
 }
-
