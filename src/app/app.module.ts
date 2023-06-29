@@ -34,42 +34,48 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
 import { CardsComponent } from "./components/cards/cards.component";
 
+
+
 @NgModule({
-    declarations: [
-        AppComponent,
-        LoginComponent,
-        RegisterComponent,
-        LayoutComponent,
-        LayoutPageComponent,
-        InicioComponent,
-        EntrevistadorComponent,
-        AsignadorComponent,
-        CoachComponent,
-        RecursoComponent,
-        DepartamentoComponent,
-        OportunidadComponent,
-        SkillComponent,
-        PerfilComponent,
-        EmpleadoComponent,
-    ],
-    providers: [MatDialog],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        TableComponent,
-        FooterComponent,
-        PopupComponent,
-        MatToolbarModule,
-        MatButtonModule,
-        MatSidenavModule,
-        MatListModule,
-        MatIconModule,
-        CommonModule,
-        RouterLink,
-        CardsComponent
-    ]
+
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    LayoutComponent,
+    LayoutPageComponent,    
+    EntrevistadorComponent,
+    AsignadorComponent,
+    CoachComponent,
+    RecursoComponent,
+    DepartamentoComponent,
+    OportunidadComponent,
+    SkillComponent,
+    PerfilComponent,
+    EmpleadoComponent,
+    InicioComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    TableComponent,
+    FooterComponent,
+    PopupComponent,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    CommonModule,
+    RouterLink,
+    TableComponent,
+    FooterComponent,
+    CardsComponent
+
+  ],
+  providers: [MatDialog],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

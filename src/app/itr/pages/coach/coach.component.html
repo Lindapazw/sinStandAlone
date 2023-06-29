@@ -1,1 +1,26 @@
-<p>coach works!</p>
+<!-- ver mi perfil y editarlo
+ver la ruta de empleados y poder clickearlo para ver la lista en el dashboard
+con un botón agregar un skill a un empleado
+con un botón agregar un recurso a un empleado
+con un botón agregar un rol a un empleado
+ver la ruta de skills y agregar una skill mediante un form -->
+
+<div class="container">
+    <div class="list-coaches">
+        <div class="title-buscador">
+            <h4>Listado de coaches</h4>
+            <div class="buscador">
+                <input type="search" placeholder="Buscar">
+            </div>
+        </div>
+        <div class="list" >
+            <div class="coach-card" *ngFor="let coach of dataSource">
+                <div class="img"></div>
+                <span>
+                    <p>{{coach.name}}</p>
+                    <p>{{coach.lastname}}</p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

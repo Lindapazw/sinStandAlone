@@ -1,19 +1,92 @@
 <div class="flex flex-column">
-  <h2 class="text-start">Registrate:</h2>
+  <div class="text-center">
+    <img src="../../../../assets/logoITR.png" alt="Logo ITR" width="250">
+  </div>
 
+  <form>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Usuario/DNI">
+      <label for="floatingInput">Nombre/DNI</label>
+    </div>
 
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi">
-    </mat-form-field>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Contraseña</label>
+    </div>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Leave a comment</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
+    <div class="form-check mt-4 mb-5 d-flex justify-content-between">
+      <div>
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          <a class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Terminos y condiciones</a>
+        </label>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-4 mb-0" id="staticBackdropLabel">Bootcamp - Woman in Tech</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h3 class="fw-bold">Términos y condiciones de uso</h3>
+              <p>Bienvenido/a a nuestro sitio web/aplicación. Antes de utilizar nuestros servicios, te pedimos que leas
+                detenidamente los siguientes términos y condiciones. Al acceder y utilizar nuestro sitio web/aplicación,
+                aceptas cumplir con estos términos y condiciones en su totalidad. Si no estás de acuerdo con alguno de estos
+                términos, te recomendamos que no utilices nuestros servicios.
+              </p>
+              <ol>
+                <li class="fw-bold">Uso del sitio web/aplicación</li>
+                <p>Nuestro sitio web/aplicación está diseñado para brindar información y/o servicios específicos. Queda
+                  estrictamente prohibido utilizar nuestro sitio web/aplicación con fines ilegales, difamatorios, fraudulentos
+                  o cualquier otro propósito que pueda violar las leyes aplicables.
+                </p>
+                <li class="fw-bold">Propiedad intelectual</li>
+                <p>Todo el contenido presente en nuestro sitio web/aplicación, incluyendo textos, imágenes, logotipos, marcas
+                  registradas, gráficos y software, está protegido por derechos de autor y otros derechos de propiedad
+                  intelectual. No se permite la reproducción, distribución o modificación de dicho contenido sin nuestro
+                  consentimiento expreso por escrito.
+                </p>
+                <li class="fw-bold">Privacidad</li>
+                <p>Respetamos tu privacidad y nos comprometemos a proteger la información personal que proporciones a través
+                  de nuestro sitio web/aplicación. Para obtener más información, consulta nuestra política de privacidad.
+                </p>
+                <li class="fw-bold">Enlaces a terceros</li>
+                <p>Nuestro sitio web/aplicación puede contener enlaces a sitios web o recursos de terceros. Estos enlaces se
+                  proporcionan únicamente como referencia y no implican nuestro respaldo o responsabilidad sobre el contenido
+                  de dichos sitios web o recursos.
+                </p>
+                <li class="fw-bold">Limitación de responsabilidad</li>
+                <p>No nos hacemos responsables de cualquier daño directo, indirecto, incidental, especial o consecuente que
+                  pueda resultar del uso de nuestro sitio web/aplicación, incluyendo pérdida de datos, interrupción del
+                  negocio, o cualquier otro perjuicio.
+                </p>
+                <li class="fw-bold">Modificaciones</li>
+                <p>Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento sin previo aviso.
+                  Te recomendamos revisar periódicamente esta sección para estar al tanto de cualquier cambio.
+                </p>
+              </ol>
+              <p>Estos términos y condiciones constituyen el acuerdo completo entre tú y nosotros con respecto al uso de
+                nuestro sitio web/aplicación. Si tienes alguna pregunta o inquietud, por favor contáctanos.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Acepto</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" [routerLink]="['/auth/login']">Ya tengo una cuenta</a>
+      </div>
+    </div>
+
+    <div>
+      <a class="btn btn-violet btn-lg w-100" href="#" role="button">Registrarme</a>
+    </div>
   </form>
-
-
 </div>
 
