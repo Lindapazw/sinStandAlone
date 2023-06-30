@@ -47,12 +47,9 @@
         <td mat-cell *matCellDef="let row"> {{row.shortGoal}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="acciones">
+      <ng-container matColumnDef="acciones" >
         <th mat-header-cell *matHeaderCellDef>Acciones</th>
-        <td mat-cell *matCellDef="let row">
-          <a href="#" class="pointer" style="color: #1878b0" matTooltip="Ver usuario">
-            <mat-icon>search</mat-icon>
-          </a>
+        <td class="actions" mat-cell *matCellDef="let row">
           <a (click)="openDialog(row)" class="pointer" style="color: #1f516f" matTooltip="Editar usuario">
             <mat-icon>edit</mat-icon>
           </a>

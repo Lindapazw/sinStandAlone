@@ -18,8 +18,25 @@ main {
 table {
     width: 100%;
 }
-  
+
 .mat-mdc-form-field {
     font-size: 14px;
     width: 100%;
+}
+
+::ng-deep .actions {
+
+  width:inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+::ng-deep .mat-mdc-table .mdc-data-table__row {
+  height: 80px;
+}
+
+::ng-deep .custom-table[_ngcontent-ng-c291826304] th[_ngcontent-ng-c291826304], .custom-table[_ngcontent-ng-c291826304] td[_ngcontent-ng-c291826304]{
+  width: 100%;
 }
