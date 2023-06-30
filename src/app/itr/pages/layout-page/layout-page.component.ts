@@ -1,6 +1,8 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, map, shareReplay } from 'rxjs';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-layout-page',
@@ -8,6 +10,9 @@ import { Observable, map, shareReplay } from 'rxjs';
   styleUrls: ['./layout-page.component.css'],
 })
 export class LayoutPageComponent {
+
+  constructor(private loginService: LoginService, private router: Router) { }
+
   private breakpointObserver = inject(BreakpointObserver);
 
   isHandset$: Observable<boolean> = this.breakpointObserver
@@ -46,4 +51,10 @@ export class LayoutPageComponent {
       ];
     })
   );
+
+  logOut() {
+    this.loginService.logOut()
+    this.router.navigate(['/auth/login']);
+  }
+
 }

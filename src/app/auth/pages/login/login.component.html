@@ -5,12 +5,12 @@
 
   <form>
     <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="Usuario/DNI">
+      <input type="email" class="form-control" id="floatingInput" placeholder="Usuario/DNI" [(ngModel)]="usuario" name="usuario">
       <label for="floatingInput">Usuario/DNI</label>
     </div>
 
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="pass" name="pass">
       <label for="floatingPassword">Contraseña</label>
     </div>
 
@@ -27,7 +27,7 @@
     </div>
 
     <div>
-      <a class="btn btn-violet btn-lg w-100" [routerLink]="['/itr/asignador']" role="button">Iniciar</a>
+      <a class="btn btn-violet btn-lg w-100"  (click)="logIn()" role="button">Iniciar</a>
     </div>
   </form>
 </div>
