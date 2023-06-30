@@ -8,3 +8,12 @@
 .icon {
   color: #fff;
 }
+.border-start-contact {
+  border-left: solid rgb(255, 255, 255) 1px;
+}
+
+@media only screen and (max-width: 768px){
+  .border-start-contact {
+    border-left: 0px;
+  }
+}
