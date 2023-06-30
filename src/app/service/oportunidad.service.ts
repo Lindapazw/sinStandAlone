@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { CoachDTO } from '../model/CoachDTO';
 import axios from 'axios';
+import { OportunidadDTO } from '../model/OportunidadDTO';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CoachService {
+export class OportunidadService {
 
   constructor() { }
 
-  url = "http://localhost:8080/api/coach";
+  url = "http://localhost:8080/api/opportunity"
 
-  public listCoaches() {
+
+  // listar oportunidades
+  public listOpportunity(){
     return axios.get(this.url).then(
       response => { return response.data }
     ).catch(
@@ -19,12 +21,15 @@ export class CoachService {
     )
   }
 
-  public listEmployeeCoach(coachDni: string) {
-    return axios.get(this.url +'/listEmployee/' + coachDni).then(
+  // añadir oportunidad
+  public addOpportunity(opportunity: OportunidadDTO){
+    return axios.post(this.url + '/create', opportunity).then(
       response => { return response.data }
     ).catch(
       error => { console.error(error); }
     )
   }
+
+
 
 }

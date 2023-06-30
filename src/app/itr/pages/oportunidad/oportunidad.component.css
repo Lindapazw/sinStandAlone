@@ -1,0 +1,25 @@
+main {
+    min-height: 90vh;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.oportunidades {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    width: 100%;
+}
+  
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}

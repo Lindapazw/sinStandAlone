@@ -6,21 +6,36 @@ con un botón agregar un rol a un empleado
 ver la ruta de skills y agregar una skill mediante un form -->
 
 <div class="container">
-    <div class="list-coaches">
-        <div class="title-buscador">
-            <h4>Listado de coaches</h4>
-            <div class="buscador">
-                <input type="search" placeholder="Buscar">
-            </div>
-        </div>
-        <div class="list" >
-            <div class="coach-card" *ngFor="let coach of dataSource">
-                <div class="img"></div>
-                <span>
-                    <p>{{coach.name}}</p>
-                    <p>{{coach.lastname}}</p>
-                </span>
-            </div>
-        </div>
+
+  <div class="d-flex justify-content-center align-items-center" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div class="list-coaches" *ngIf="!isLoading">
+    <div class="title-buscador">
+      <h4>Listado de coaches</h4>
+      <div class="buscador">
+        <input
+          type="search"
+          (keyup)="applyFilter($event)"
+          placeholder="Buscar"
+        />
+      </div>
     </div>
+    <div class="list">
+      <div class="coach-card" *ngFor="let coach of filterCoach">
+        <div class="img"></div>
+        <span>
+          <p>{{ coach.name }}</p>
+          <p>{{ coach.lastname }}</p>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="coachees">
+    <h2>Coachees</h2>
+    <app-coach-table></app-coach-table>
+  </div>
+  
 </div>

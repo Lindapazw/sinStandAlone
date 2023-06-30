@@ -1,0 +1,40 @@
+a {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+.card {
+  min-height: 400px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.05), 0 6px 6px rgba(0,0,0,0.15);
+}
+
+.card__title {
+  padding-top: 0;
+}
+
+.card__img-cantainer {
+  width: 100%;
+  height: 50%;
+  border-radius: .5rem;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.card__description {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.card__action{
+  display: flex;
+  justify-content: space-between;
+}

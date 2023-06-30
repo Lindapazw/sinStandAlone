@@ -1,0 +1,38 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+  
+  /* estilos de la tabla */
+  
+  .custom-table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    width: 25%; /* Ajusta este valor según la cantidad de columnas que tengas */
+    padding: 8px;
+  }
+
+  .mat-mdc-row .mat-mdc-cell {
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+  

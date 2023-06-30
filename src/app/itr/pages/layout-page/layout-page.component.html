@@ -29,30 +29,17 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <!-- buscador -->
-      <form class="d-flex justify-content-end">
-        <div class="input-group">
-          <input class="form-control d-none d-md-block" type="search" placeholder="Buscador.." aria-label="Search">
-          <button type="button" class="btn btn-outline-light d-none d-md-block ml-2">
-            <span class="material-symbols-outlined">search</span>
-          </button>
-        </div>
-      </form>
+            <span>itr</span>
 
-      <!-- Botón desplegable empleado-->
-      <div class="btn-group d-flex justify-content-end">
-        <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          Linda Candela Paz
-        </button>
+        </mat-toolbar>
 
-        <div>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Perfil</a></li>
-            <li><a class="dropdown-item" href="#">Cursos</a></li>
-            <li><a class="dropdown-item" href="#">Ver liquidación</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">cerrar sesión</a></li>
-          </ul>
+
+
+        <!-- Add Content Here -->
+        <div class="grid-container container">
+            <div style="display: flex; flex-direction: column; ">
+                <router-outlet></router-outlet>
+            </div>
         </div>
       </div>
 
