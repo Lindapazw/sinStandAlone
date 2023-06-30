@@ -19,12 +19,4 @@ export class CoachService {
     )
   }
 
-  public listEmployeeCoach(coachDni: string) {
-    return axios.get(this.url +'/listEmployee/' + coachDni).then(
-      response => { return response.data }
-    ).catch(
-      error => { console.error(error); }
-    )
-  }
-
 }

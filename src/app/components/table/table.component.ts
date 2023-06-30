@@ -1,7 +1,7 @@
 import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // table
-import { ViewChild} from '@angular/core';
+import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
@@ -15,7 +15,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedService } from 'src/app/service/shared.service';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 /**
@@ -36,14 +35,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ReactiveFormsModule,
     MatIconModule,
     MatButtonModule,
-    MatProgressSpinnerModule
   ],
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css'],
 })
-export class TableComponent implements OnInit, OnChanges, DoCheck {
+export class TableComponent implements AfterViewInit, OnInit, OnChanges, DoCheck {
 
-  isLoading: boolean = true;
   private estado;
 
   empleadoVacio: EmployeeDTO = {
@@ -83,8 +80,7 @@ export class TableComponent implements OnInit, OnChanges, DoCheck {
     if(this.estado){
       this.employeeService.listarEmployees().then(
         response => {    
-          this.dataSource = new MatTableDataSource(response);
-        }
+          this.dataSource = new MatTableDataSource(response);}
       )
       this.estado = false;
       console.log("ngDoCheck");
@@ -99,12 +95,12 @@ export class TableComponent implements OnInit, OnChanges, DoCheck {
     this.anterior = this.refrescar;
     this.employeeService.listarEmployees().then((response) => {
       this.dataSource = new MatTableDataSource(response);
-      this.isLoading = false;
-      setTimeout(() => {
-        this.dataSource.paginator = this.paginator;
-      });
-      this.dataSource.sort = this.sort;
     });
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {
@@ -125,12 +121,10 @@ export class TableComponent implements OnInit, OnChanges, DoCheck {
 
   public openDialog(employee: EmployeeDTO) {
     this.dialog.open(PopupComponent, { data: employee });
-    this.shared.editarExistente(true);
   }
 
   openNew() {
-    this.empleadoVacio = {name: '',lastName: '',dni: '',shortGoal: '',longGoal: ''}
     this.dialog.open(PopupComponent, { data: this.empleadoVacio });
-    this.shared.agregarNuevo(true);
   }
 }
+

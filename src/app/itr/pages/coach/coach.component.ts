@@ -1,7 +1,6 @@
-import { Component, NgIterable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CoachDTO } from 'src/app/model/CoachDTO';
 import { CoachService } from 'src/app/service/coach.service';
-
 
 @Component({
   selector: 'app-coach',
@@ -9,41 +8,13 @@ import { CoachService } from 'src/app/service/coach.service';
   styleUrls: ['./coach.component.css'],
 })
 export class CoachComponent implements OnInit {
-  constructor(private coachService: CoachService) {} 
 
-  // Loading -> spinner
-  isLoading: boolean = true
+  constructor(private coachService: CoachService) {}
 
-
-  //Coach-card
-  dataSource: CoachDTO[] = [];
-  filterCoach: CoachDTO[] = [];
-
-  //Employee-table
-
+  dataSource: CoachDTO[]
+  
   ngOnInit(): void {
-    //Coach-card
-    this.coachService.listCoaches().then((response) => {
-      this.dataSource = response;
-      this.filterCoach = response;
-      this.isLoading = false
-    });
-
-    //Employee-table
+    this.coachService.listCoaches()
+    .then( response => {this.dataSource = response});
   }
-
-  // Filtro para coach-card
-  applyFilter(event: any) {
-    const filterValue = event.target.value.toLowerCase();
-
-    this.filterCoach = this.dataSource.filter((coach: CoachDTO) => {
-      const fullName = coach.name.toLowerCase() + ' ' + coach.lastname.toLowerCase();
-      return fullName.includes(filterValue);
-    });
-  }
-
-  // Tabla de empleados
-
-
-
 }

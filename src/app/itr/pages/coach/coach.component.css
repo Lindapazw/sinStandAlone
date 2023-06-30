@@ -1,9 +1,5 @@
 .container {
     min-height: 100vh;
-    padding: 3rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
 }
 
 .title-buscador {
@@ -26,7 +22,7 @@ h4 {
 .list-coaches {
     background-color: #fff;
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0 20px 20px rgba(0,0,0,0.05), 0 6px 6px rgba(0,0,0,0.15);
 }
 
