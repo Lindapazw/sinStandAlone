@@ -23,3 +23,10 @@ nav {
     color: #fff;
     text-decoration: none;
 }
+
+@media screen and (max-width: 768px) {
+    .sidenav {
+        width: 50%;
+    }
+}
+    
