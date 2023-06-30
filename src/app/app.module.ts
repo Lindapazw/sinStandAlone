@@ -8,9 +8,11 @@ import { RegisterComponent } from './auth/pages/register/register.component';
 import { LayoutComponent } from './auth/pages/layout/layout.component';
 import { LayoutPageComponent } from './itr/pages/layout-page/layout-page.component';
 import { InicioComponent } from './itr/pages/inicio/inicio.component';
+import { EntrevistadorComponent } from './itr/pages/entrevistador/entrevistador.component';
 import { AsignadorComponent } from './itr/pages/asignador/asignador.component';
 import { CoachComponent } from './itr/pages/coach/coach.component';
 import { RecursoComponent } from './itr/pages/recurso/recurso.component';
+import { DepartamentoComponent } from './itr/pages/departamento/departamento.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material/material.module';
 // components
@@ -44,9 +46,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
         RegisterComponent,
         LayoutComponent,
         LayoutPageComponent,
+        EntrevistadorComponent,
         AsignadorComponent,
         CoachComponent,
         RecursoComponent,
+        DepartamentoComponent,
         OportunidadComponent,
         SkillComponent,
         PerfilComponent,
