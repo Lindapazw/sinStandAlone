@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { sesionAuth } from './guard/session.guard';
 
 // rutas padres
 // localhost:4200/auth
@@ -14,6 +15,7 @@ const routes: Routes = [
   {
     path: 'itr',
     loadChildren: () => import('./itr').then(m => m.ItrRoutingModule),
+    canActivate: [sesionAuth]
   },
   {
     path: '',

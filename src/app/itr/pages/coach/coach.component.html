@@ -24,7 +24,9 @@ ver la ruta de skills y agregar una skill mediante un form -->
     </div>
     <div class="list">
       <div class="coach-card" *ngFor="let coach of filterCoach">
-        <div class="img"></div>
+        <div class="img">
+          <img src="https://img.freepik.com/free-icon/user_318-563642.jpg?w=360" width="50px" alt="">
+        </div>
         <span>
           <p>{{ coach.name }}</p>
           <p>{{ coach.lastname }}</p>
@@ -33,6 +35,7 @@ ver la ruta de skills y agregar una skill mediante un form -->
     </div>
   </div>
 
+  <!-- Empleados coacheados -->
   <div class="coachees">
     <h2>Coachees</h2>
     <app-coach-table></app-coach-table>

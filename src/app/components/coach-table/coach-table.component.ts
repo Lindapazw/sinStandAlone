@@ -15,7 +15,7 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./coach-table.component.css'],
 })
 export class CoachTableComponent implements OnInit {
-  displayedColumns: string[] = ['name','lastName','dni','longGoal','shortGoal'];
+  displayedColumns: string[] = ['name','lastName','dni','longGoal','shortGoal', 'acciones'];
   dataSource: MatTableDataSource<EmployeeDTO>;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
