@@ -11,26 +11,25 @@ import { CoachService } from 'src/app/service/coach.service';
 export class CoachComponent implements OnInit {
   constructor(private coachService: CoachService) {} 
 
+  // Loading -> spinner
+  isLoading: boolean = true
+
+
   //Coach-card
   dataSource: CoachDTO[] = [];
   filterCoach: CoachDTO[] = [];
 
   //Employee-table
 
-
-
-
   ngOnInit(): void {
     //Coach-card
     this.coachService.listCoaches().then((response) => {
       this.dataSource = response;
       this.filterCoach = response;
+      this.isLoading = false
     });
 
     //Employee-table
-
-
-
   }
 
   // Filtro para coach-card

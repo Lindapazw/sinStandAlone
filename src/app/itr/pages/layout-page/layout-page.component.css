@@ -9,6 +9,10 @@ nav {
     justify-content: space-between;
 }
 
+.sidenav {
+    width: 14%;
+}
+
 .logo, .perfil {
     display: flex;
     align-items: center;
