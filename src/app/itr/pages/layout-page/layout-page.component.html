@@ -1,71 +1,78 @@
+
 <mat-sidenav-container class="sidenav-container">
-  <!-- menu lateral responsivo -->
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menú</mat-toolbar>
-    <mat-nav-list>
-      <a class="mb-3" mat-list-item routerLink="./inicio"><span class="material-symbols-outlined bg icon rounded-circle p-2 mr-2">home</span>Inicio</a>
-      <a class="mb-3" mat-list-item routerLink="./rrhh"><span class="material-symbols-outlined bg icon rounded-circle p-2 mr-2">handshake</span>RRHH </a>
-      <a class="mb-3" mat-list-item routerLink="./entrevistador"><span class="material-symbols-outlined bg icon rounded-circle p-2 mr-2">group</span>Entrevistador</a>
-      <a class="mb-3" mat-list-item routerLink="./coach"><span class="material-symbols-outlined bg icon rounded-circle p-2 mr-2">support_agent</span>Coach </a>
-      <a class="mb-3" mat-list-item routerLink="./asignador"><span class="material-symbols-outlined bg icon rounded-circle p-2 mr-2">travel_explore</span>Asignador</a>
-      <a class="mb-3" mat-list-item routerLink="./recurso"><span class="material-symbols-outlined bg icon rounded-circle p-2 mr-2">quick_reference_all</span>Recurso</a>
-      <a class="mb-3" mat-list-item routerLink="./departamento"><span class="material-symbols-outlined bg icon rounded-circle p-2 mr-2">apartment</span>Departamento</a>
-    </mat-nav-list>
-  </mat-sidenav>
 
-  <mat-sidenav-content>
-    <!-- navegacion-->
-    <mat-toolbar class="bg d-flex justify-content-between">
-      <!-- menu sandwich-->
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
 
-      <!-- buscador -->
-      <form class="d-flex justify-content-end">
-        <div class="input-group">
-          <input class="form-control d-none d-md-block" type="search" placeholder="Buscador.." aria-label="Search">
-          <button type="button" class="btn btn-outline-light d-none d-md-block ml-2">
-            <span class="material-symbols-outlined">search</span>
-          </button>
+        <mat-toolbar>Menu</mat-toolbar>
+
+        <mat-nav-list>
+
+            <a mat-list-item [routerLink]="['/itr/inicio']">Inicio</a>
+
+            <hr>
+
+            <a mat-list-item [routerLink]="['/itr/asignador']" routerLinkActive="router-link-active">Asignador</a>
+
+            <a mat-list-item [routerLink]="['/itr/coach']">Coach</a>
+
+            <a mat-list-item [routerLink]="['/itr/departamento']">Departamento</a>
+
+            <a mat-list-item [routerLink]="['/itr/entrevistador']">Entrevistador</a>
+
+            <a mat-list-item [routerLink]="['/itr/recurso']">Recurso</a>
+
+            <a mat-list-item [routerLink]="['/itr/oportunidad']">Oportunidades</a>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <mat-toolbar color="primary">
+
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+                *ngIf="isHandset$ | async">
+
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+
+            </button>
+
+            <nav>
+                <div class="logo">
+                    <p>itr</p>
+                </div>
+                <div class="perfil">
+                    <div class="dropdown">
+                        <a class="btn-perfil dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Nombre
+                        </a>
+
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" routerLink="perfil">Configuración</a></li>
+                          <mat-divider></mat-divider>
+                          <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </mat-toolbar>
+
+        <!-- Add Content Here -->
+        <div class="grid-container container">
+            <div style="display: flex; flex-direction: column; ">
+                <router-outlet></router-outlet>
+            </div>
         </div>
-      </form>
 
-      <!-- Botón desplegable empleado-->
-      <div class="btn-group d-flex justify-content-end">
-        <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          Linda Candela Paz
-        </button>
-
-        <div>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Perfil</a></li>
-            <li><a class="dropdown-item" href="#">Cursos</a></li>
-            <li><a class="dropdown-item" href="#">Ver liquidación</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">cerrar sesión</a></li>
-          </ul>
-        </div>
-      </div>
-
-    </mat-toolbar> <!-- fin de navegacion-->
-
-    <!-- se encarga de mostrar las rutas hijas -->
-    <router-outlet></router-outlet>
-
-    <!-- footer -->
-    <app-footer></app-footer>
+        <app-footer></app-footer>
 
 
-  </mat-sidenav-content>
+    </mat-sidenav-content>
+
 </mat-sidenav-container>
+
 
 

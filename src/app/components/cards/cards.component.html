@@ -1,0 +1,19 @@
+<mat-card class="card">
+  <div class="card__img-cantainer">
+    <img class="card__image" mat-card-image src="https://www.cetys.mx/educon/wp-content/uploads/2021/08/live-instructor-led-online-training-1536x960.jpg" alt="Photo of a resources">
+  </div>
+  <mat-card-header class="card__title">
+    <mat-card-title >{{resource.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="card__description">
+    <p>
+      {{resource.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="card__action">
+    <button mat-raised-button color="primary" class="card__button"><a href="{{resource.url}}" target="_blank">Ir al curso</a></button>
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon" (click)="deleteResources()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

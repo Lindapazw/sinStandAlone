@@ -23,3 +23,7 @@ td, th {
   width: 25%; /* Ajusta este valor según la cantidad de columnas que tengas */
   padding: 8px;
 }
+
+.h-spinner {
+  height: 45vh;
+}

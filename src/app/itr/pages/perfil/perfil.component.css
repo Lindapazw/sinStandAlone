@@ -1,0 +1,88 @@
+.container {
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3rem 0 0 0;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+aside a {
+    text-decoration: none;
+    color: #1f1f1f;
+    font-weight: 600;
+    background-color: #d6d5d5;
+    border-radius: 8px;
+    padding: .5rem 1rem;
+}
+
+.perfil-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #adadad;
+}
+
+.modificar-datos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modificar-datos button {
+    background-color: #d6d5d5;
+    border-radius: 50%;
+}
+
+.perfil-info {
+    width: 60%;
+}
+
+.perfil-info-group {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.perfil-info-group .perfil-info-item {
+    width: 100%;
+    
+}
+
+.perfil-info-item p {
+    background-color: #d6d5d5;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    padding: 0 1rem;
+
+}
+
+
+/* SKILLS */
+
+.skills {
+    border-top: solid 1px #adadad;
+    padding: 1rem 0 0 0;
+    font-weight: 600;
+    width: 100%;
+}
+
+.skills-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-weight: 200;
+}
+
+.skill-item {
+   
+}
